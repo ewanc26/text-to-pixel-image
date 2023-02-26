@@ -2,6 +2,7 @@ from PIL import Image
 import json
 import os
 from random import randint
+from string import printable
 
 root = os.path.dirname(os.path.realpath(__file__))
 json_file = rf"{root}\sorted_chars.json"
@@ -28,6 +29,12 @@ while True:
         break
     else:
         print("Invalid input. Please enter a non-empty string.")
+    
+    for char in input_string:
+        if char in printable:
+            pass
+        else:
+            print(f"Invalid character found! ('{char}')\nPlease don't use '{char}'.")
 
 index = 0
 x, y = 0, 0
