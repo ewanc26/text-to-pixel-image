@@ -1,6 +1,6 @@
 # text-to-pixel-image
 
-*This Python script uses the `PIL (Python Imaging Library) module` to create an image consisting of squares, where each square represents a character from a user-provided input string. The colours of the squares are determined by a pre-defined colour code dictionary (sorted_chars.json), which maps each character to a hexadecimal colour code.*
+*This Python script uses the `PIL (Python Imaging Library) module` to create an image consisting of squares, where each square represents a character from a user-provided input string. The colours of the squares are determined by a pre-defined colour code dictionary (`sorted_chars.json`), which maps each character to a hexadecimal colour code.*
 
 ## Prerequisites
 
