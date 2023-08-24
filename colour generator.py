@@ -3,8 +3,8 @@ import string
 import secrets
 import os
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_FILE = os.path.join(ROOT_DIR, 'sorted_chars.json')
+src_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_FILE = os.path.join(src_DIR, 'sorted_chars.json')
 
 dictionary_of_colours = {}
 
