@@ -4,8 +4,8 @@ import os
 from random import randint
 from string import printable
 
-root = os.path.dirname(os.path.realpath(__file__))
-json_file = rf"{root}\sorted_chars.json"
+src = os.path.dirname(os.path.realpath(__file__))
+json_file = rf"{src}\sorted_chars.json"
 
 with open(json_file) as f:
     colour_codes = json.load(f)
@@ -53,4 +53,4 @@ for row in range(num_rows):
     y += 10
     x = 0
 
-image.save(rf'{root}\output.png')
+image.save(rf'{src}\output.png')
