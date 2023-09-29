@@ -5,7 +5,7 @@
 ## Prerequisites
 
 - Python 3.x
-- Pillow package (can be installed via pip: pip install Pillow)
+- Pillow package (can be installed via pip: `pip install Pillow` or `pip3 install Pillow` on UNIX based systems such as macOS)
 
 ## Usage
 
