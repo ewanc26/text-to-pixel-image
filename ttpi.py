@@ -56,8 +56,8 @@ for row in range(num_rows):
         colour_code = colour_codes.get(char, '000000')  # Default to '000000' if char not found
         colour = tuple(int(colour_code[i:i + 2], 16) for i in (0, 2, 4))
         square = (x, y, x + 10, y + 10)
-        color_image = Image.new('RGB', (10, 10), colour)
-        image.paste(color_image, square)
+        colour_image = Image.new('RGB', (10, 10), colour)
+        image.paste(colour_image, square)
         x += 10
         index_shift = randint(0, 3)
         index = (index + index_shift) % len(input_string)
