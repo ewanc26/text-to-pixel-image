@@ -10,7 +10,7 @@ def create_output_folders(output_folder_path):
         os.makedirs(output_folder_path)
 
 def generate_colour_codes():
-    """Generate RGB color codes for characters."""
+    """Generate RGB colour codes for characters."""
     dictionary_of_colours = {}
     all_printable_chars = [char for char in string.printable if char in string.ascii_letters or char in string.digits or char in string.punctuation or char in string.whitespace]
 
