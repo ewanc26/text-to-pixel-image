@@ -42,15 +42,23 @@ def get_valid_input(prompt, input_type=int):
             print("Invalid input. Please enter a valid integer.")
     return user_input
 
+def find_largest_divisor(n, min_divisor=10):
+    # Find the largest divisor of n that is at least min_divisor.
+    for divisor in range(min_divisor, 0, -1):
+        if n % divisor == 0:
+            return divisor
+    return min_divisor  # Default to min_divisor if no larger divisor is found
+
 def generate_image(input_string, width, height, colour_codes):
-    # Generate image based on input string and colour codes.
+    # Compute the largest suitable pixel size.
+    pixel_size = find_largest_divisor(width, 10)
+    squares_per_row = width // pixel_size
+    num_rows = height // pixel_size
+
     image = Image.new('RGB', (width, height), 'white')
-    squares_per_row = width // 10
-    num_rows = height // 10
 
     index = 0
     x, y = 0, 0
-    pixel = 10
 
     for row in range(num_rows):
         for square_index in range(squares_per_row):
@@ -60,16 +68,16 @@ def generate_image(input_string, width, height, colour_codes):
             rgb_values = colour_codes.get(char)
             if rgb_values is not None:
                 colour = tuple(rgb_values)
-                square = (x, y, x + pixel, y + pixel)
-                colour_image = Image.new('RGB', (pixel, pixel), colour)
+                square = (x, y, x + pixel_size, y + pixel_size)
+                colour_image = Image.new('RGB', (pixel_size, pixel_size), colour)
                 image.paste(colour_image, square)
-                x += 10
+                x += pixel_size
                 index_shift = random.randint(1, 2)
                 index = (index + index_shift) % len(input_string)
             else:
                 print(f"No RGB values found for character '{char}'. Skipping.")
             index += 1
-        y += 10
+        y += pixel_size
         x = 0
 
     return image
