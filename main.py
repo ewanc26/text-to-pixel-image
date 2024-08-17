@@ -5,12 +5,12 @@ import random
 from PIL import Image
 
 def create_output_folders(output_folder_path):
-    """Create output folders if they don't exist."""
+    # Create output folders if they don't exist.
     if not os.path.exists(output_folder_path):
         os.makedirs(output_folder_path)
 
 def generate_colour_codes():
-    """Generate RGB colour codes for characters."""
+    # Generate RGB colour codes for characters.
     dictionary_of_colours = {}
     all_printable_chars = [char for char in string.printable if char in string.ascii_letters or char in string.digits or char in string.punctuation or char in string.whitespace]
 
@@ -33,7 +33,7 @@ def generate_colour_codes():
     return dictionary_of_colours
 
 def get_valid_input(prompt, input_type=int):
-    """Prompt user for valid input."""
+    # Prompt user for valid input.
     while True:
         try:
             user_input = input_type(input(prompt))
@@ -43,7 +43,7 @@ def get_valid_input(prompt, input_type=int):
     return user_input
 
 def generate_image(input_string, width, height, colour_codes):
-    """Generate image based on input string and colour codes."""
+    # Generate image based on input string and colour codes.
     image = Image.new('RGB', (width, height), 'white')
     squares_per_row = width // 10
     num_rows = height // 10
