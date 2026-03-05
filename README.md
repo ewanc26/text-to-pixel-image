@@ -23,3 +23,7 @@
 - It then creates an image based on the input string and colour codes, with each character represented by a coloured square.
 - The dimensions of the output image are specified by the user.
 - The processing time for image generation is displayed upon completion.
+
+## ☕ Support
+
+If you found this useful, consider [buying me a ko-fi](https://ko-fi.com/ewancroft)!
