@@ -4,19 +4,19 @@ Guidance for agents working on the small Python text-to-pixel image generator.
 
 ## Structure
 
-- `main.py` accepts dimensions/text and renders the output grid with Pillow.
-- `colour generator.py` creates the character-to-color mapping.
+- `main.py` loads `json/sorted_chars.json`, prompts for dimensions and non-empty text, chooses a square size from a divisor of the width, repeats the input across the grid with random one- or two-character advances, and always writes `output/output.png` beside the script.
+- `colour generator.py` creates the character-to-RGB mapping consumed by `main.py`.
 - `json/sorted_chars.json` is persistent mapping data; changing it changes established visual output.
 
 ## Invariants
 
 - Validate positive dimensions and cap pixel/memory allocation before creating an image.
-- Define behavior when text length differs from grid capacity; never index past data or silently allocate enormous canvases.
+- Preserve or deliberately change the current repeat/random-skip behavior; seed or inject randomness before relying on exact pixels in tests.
 - Preserve Unicode handling and deterministic mapping for characters already in the JSON file.
 - Resolve data paths relative to the script/repository, not the caller's current directory.
-- Avoid overwriting an existing output without clear user intent.
+- The current output path overwrites `output/output.png`; any move to configurable/non-overwriting output must update the README and prompts together.
 - The project is marked unmaintained; keep maintenance changes small.
 
 ## Validation
 
-Run `python -m py_compile main.py 'colour generator.py'`. Test empty text, one pixel, exact/short/long input, Unicode, missing/corrupt mapping, invalid/huge dimensions, read-only output paths, and deterministic colors. Inspect generated dimensions and pixel values using Pillow. Do not commit generated `output.png` files or virtual environments.
+Run `python -m py_compile main.py 'colour generator.py'`. Test empty text, zero/negative/small dimensions, widths without useful divisors, exact/short/long input, unmapped and Unicode characters, missing/corrupt/out-of-range mapping values, read-only output paths, and seeded randomness. Inspect dimensions and pixels with Pillow. Do not commit the generated `output/` directory or virtual environments.
