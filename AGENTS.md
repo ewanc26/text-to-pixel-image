@@ -20,4 +20,4 @@ Guidance for AI coding agents working in **text-to-pixel-image**.
 
 ## Recent history
 
-Sync AGENTS.md from zincfox; Sync AGENTS.md from zincfox; Sync CONTRIBUTING.md from zincfox; Sync CONTRIBUTING.md from zincfox; Update issue template: config.yml
+Update issue template: config.yml
