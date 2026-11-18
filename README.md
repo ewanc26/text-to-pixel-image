@@ -1,5 +1,7 @@
 # text-to-pixel-image
 
+  <a href="LICENCE"><img src="https://img.shields.io/github/license/ewanc26/text-to-pixel-image?label=licence" alt="Licence"></a>
+  <a href="https://github.com/sponsors/ewanc26"><img src="https://img.shields.io/github/sponsors/ewanc26?logo=githubsponsors&logoColor=white&label=sponsors" alt="Sponsor"></a>
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Turns text into a grid of coloured squares. Each character gets a random RGB colour.
@@ -16,6 +18,9 @@ Turns text into a grid of coloured squares. Each character gets a random RGB col
 3. Enter the width and height (in pixels) for the output image
 4. Enter the string to convert
 5. Result is saved as `output.png` in the current directory
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and the checks required before opening a pull request.
 
 ## Licence
 
