@@ -4,6 +4,8 @@ Guidance for AI coding agents working in **text-to-pixel-image**.
 
 ## Project overview
 
+Turns text into a grid of coloured squares. Each character gets a random RGB colour.
+
 - Language: Python
 - Default branch: main
 
